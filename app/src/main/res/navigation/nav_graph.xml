@@ -25,10 +25,22 @@
         <action
             android:id="@+id/action_bookInfoFragment_to_mainMenuFragment"
             app:destination="@id/mainMenuFragment" />
+        <action
+            android:id="@+id/action_bookInfoFragment_to_readerBookFragment"
+            app:destination="@id/readerBookFragment" />
     </fragment>
     <fragment
         android:id="@+id/serverUnavailableFragment"
         android:name="com.alkantemirov.openlibrary.ServerUnavailableFragment"
         android:label="@string/internal_error_503"
         tools:layout="@layout/fragment_server_unavailable" />
+    <fragment
+        android:id="@+id/readerBookFragment"
+        android:name="com.alkantemirov.openlibrary.ReaderBookFragment"
+        android:label=""
+        tools:layout="@layout/fragment_reader_book" >
+        <action
+            android:id="@+id/action_readerBookFragment_to_serverUnavailableFragment"
+            app:destination="@id/serverUnavailableFragment" />
+    </fragment>
 </navigation>

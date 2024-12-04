@@ -1,6 +1,7 @@
 package com.alkantemirov.openlibrary;
 
 import android.app.Dialog;
+import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.drawable.Drawable;
@@ -47,6 +48,7 @@ public class BookInfoFragment extends Fragment {
         render();
         bindFabDelete();
         bindFabUpdate();
+        bindReadButton();
     }
     private void setup() {
         bookViewModel = new ViewModelProvider(requireActivity()).get(BookViewModel.class);
@@ -57,7 +59,7 @@ public class BookInfoFragment extends Fragment {
         coverpath.append(Configuration.COVERS_DIR).append(book.getPreview());
         binding.bookInfoTitle.setText(book.getTitle());
         binding.bookInfoAuthor.setText(book.getAuthor().getName());
-        ((AppCompatActivity)getActivity()).getSupportActionBar().setTitle(bookViewModel.getBook().getTitle());
+        ((AppCompatActivity)getActivity()).getSupportActionBar().setTitle(book.getTitle());
         fetchCover(coverpath.toString());
     }
     private void fetchCover(String src) {
@@ -129,6 +131,19 @@ public class BookInfoFragment extends Fragment {
                 render();
                 updateDialog.dismiss();
             });
+        });
+    }
+    private void bindReadButton() {
+        String location = bookViewModel.getBook().getLocation();
+        if (location == null || location.isEmpty()) {
+            binding.readBookButton.setText("Недоступно");
+            binding.readBookButton.setClickable(false);
+            binding.readBookButton.setBackgroundColor(getResources().getColor(R.color.inactive));
+            binding.readBookButton.setTextColor(getResources().getColor(R.color.black));
+            return;
+        }
+        binding.readBookButton.setOnClickListener(view -> {
+            NavHostFragment.findNavController(BookInfoFragment.this).navigate(R.id.action_bookInfoFragment_to_readerBookFragment);
         });
     }
     private void clearImages() {
