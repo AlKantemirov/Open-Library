@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/mainMenuFragment">
+
+    <fragment
+        android:id="@+id/mainMenuFragment"
+        android:name="com.alkantemirov.openlibrary.MainMenuFragment"
+        android:label="@string/fragment_main_menu_label"
+        tools:layout="@layout/fragment_main_menu" >
+        <action
+            android:id="@+id/action_mainMenuFragment_to_bookInfoFragment"
+            app:destination="@id/bookInfoFragment" />
+        <action
+            android:id="@+id/action_mainMenuFragment_to_serverUnavailableFragment"
+            app:destination="@id/serverUnavailableFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/bookInfoFragment"
+        android:name="com.alkantemirov.openlibrary.BookInfoFragment"
+        android:label=""
+        tools:layout="@layout/fragment_book_info" >
+        <action
+            android:id="@+id/action_bookInfoFragment_to_mainMenuFragment"
+            app:destination="@id/mainMenuFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/serverUnavailableFragment"
+        android:name="com.alkantemirov.openlibrary.ServerUnavailableFragment"
+        android:label="@string/internal_error_503"
+        tools:layout="@layout/fragment_server_unavailable" />
+</navigation>

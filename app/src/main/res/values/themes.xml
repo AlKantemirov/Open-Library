@@ -1,0 +1,43 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Base.Theme.SimpleLibrary" parent="Theme.Material3.DayNight.NoActionBar">
+        <item name="floatingActionButtonStyle">@style/Widget.App.FloatingActionButton</item>
+        <item name="appBarLayoutStyle">@style/Widget.App.AppBarLayout.Primary</item>
+        <item name="buttonStyle">@style/Widget.App.Button</item>
+        <item name="colorAccent">@color/primary</item>
+        <item name="colorPrimary">@color/primary</item>
+        <item name="colorSecondary">@color/secondary</item>
+    </style>
+
+    <style name="Theme.SimpleLibrary" parent="Base.Theme.SimpleLibrary" />
+
+
+    <style name="Widget.App.FloatingActionButton" parent="Widget.MaterialComponents.FloatingActionButton">
+        <item name="materialThemeOverlay">@style/appFab</item>
+    </style>
+    <style name="Widget.App.AppBarLayout.Primary" parent="Widget.MaterialComponents.AppBarLayout.Primary">
+        <item name="materialThemeOverlay">@style/appToolbar</item>
+    </style>
+    <style name="Widget.App.Button" parent="Widget.AppCompat.Button">
+        <item name="colorPrimary">@color/secondary</item>>
+    </style>
+
+    <style name="appFab">
+        <item name="colorSecondary">@color/primary</item>
+    </style>
+
+    <style name="appToolbar">
+        <item name="colorPrimary">@color/primary</item>
+        <item name="colorControlNormal">@color/white</item>
+        <item name="titleTextColor">@color/white</item>
+    </style>
+
+    <style name="backgroundLayout">
+        <item name="android:background">@color/secondary</item>
+    </style>
+
+    <style name="search">
+        <item name="android:background">@color/primary</item>
+    </style>
+
+</resources>

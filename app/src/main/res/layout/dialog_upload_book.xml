@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center_horizontal"
+    android:layout_marginTop="30dp"
+    android:layout_marginBottom="30dp">
+
+    <Button
+        android:id="@+id/uploadBookTxtButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/uploadBookCoverImagePath"
+        android:layout_marginTop="24dp"
+        android:text="Выберите книгу (.txt) с устройства"
+        android:layout_alignRight="@id/uploadBookAuthorField"
+        android:layout_alignLeft="@id/uploadBookCoverImage"/>
+
+    <Button
+        android:id="@+id/uploadBookSubmitButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Отправить..."
+        android:layout_below="@id/uploadBookTxtButton"
+        android:layout_alignRight="@id/uploadBookAuthorField"
+        android:layout_alignLeft="@id/uploadBookCoverImage"/>
+
+    <ImageView
+        android:id="@+id/uploadBookCoverImage"
+        android:layout_width="300px"
+        android:layout_height="533px"
+        app:srcCompat="@drawable/newbook" />
+
+    <EditText
+        android:id="@+id/uploadBookTitleField"
+        android:layout_width="186dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_toRightOf="@id/uploadBookCoverImage"
+        android:ems="10"
+        android:inputType="text"
+        android:hint="Название" />
+
+    <EditText
+        android:id="@+id/uploadBookAuthorField"
+        android:layout_width="186dp"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@id/uploadBookCoverImage"
+        android:layout_marginLeft="10dp"
+        android:layout_marginBottom="0dp"
+        android:layout_toRightOf="@id/uploadBookCoverImage"
+        android:ems="10"
+        android:inputType="text"
+        android:hint="Автор" />
+
+    <TextView
+        android:id="@+id/uploadBookCoverImagePath"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/uploadBookCoverImage"
+        android:layout_marginTop="6dp"
+        android:text="Выберите обложку"
+        android:textColor="#686868"
+        android:textSize="12sp" />
+
+</RelativeLayout>

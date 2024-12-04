@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginEnd="20dp"
+    android:layout_marginStart="20dp"
+    android:gravity="center_horizontal">
+
+    <EditText
+        android:id="@+id/updateBookTitleField"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="text"
+        android:hint="Название"
+        android:layout_marginTop="60dp"/>
+
+    <EditText
+        android:id="@+id/updateBookAuthorField"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="text"
+        android:layout_below="@id/updateBookTitleField"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="15dp"
+        android:hint="Автор" />
+
+    <Button
+        android:id="@+id/updateBookSubmitButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/updateBookAuthorField"
+        android:layout_alignEnd="@id/updateBookAuthorField"
+        android:layout_alignStart="@id/updateBookAuthorField"
+        android:text="Обновить..."
+        android:layout_marginBottom="60dp"/>
+</RelativeLayout>

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainMenuFragment">
+
+        <SearchView
+            android:id="@+id/mainMenuSearch"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:gravity="top"
+            android:theme="@style/search"
+            android:iconifiedByDefault="false"
+            android:paddingBottom="5dp"/>
+
+        <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+            android:id="@+id/mainMenuSwiper"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            tools:context=".MainMenuFragment"
+            android:layout_marginTop="50dp">
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/booksList"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent">
+
+                </androidx.recyclerview.widget.RecyclerView>
+
+        </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/uploadBookButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|end"
+            android:clickable="true"
+            android:focusable="true"
+            android:src="@android:drawable/ic_menu_add"
+            android:layout_marginBottom="10dp"
+            android:layout_marginEnd="10dp" />
+
+</FrameLayout>
