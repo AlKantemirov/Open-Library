@@ -1,7 +1,6 @@
 package com.alkantemirov.openlibrary;
 
 public class Configuration {
-    public static final String SERVER_URL = "http://192.168.1.65";
     public static final String FETCH_URL = SERVER_URL + "/fetch.php";
     public static final String FETCH_AUTHORS_URL = SERVER_URL + "/fetch_authors.php";
     public static final String REMOVE_URL = SERVER_URL + "/delete.php?id=";
